@@ -19,7 +19,7 @@ s_list* createNode(int data) {
     return newNode;
 }
 
-int print_list(s_list *head) {
+void print_list(s_list *head) {
     s_list * current = head;
     while (current != NULL)
     {
@@ -29,12 +29,14 @@ int print_list(s_list *head) {
 
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     s_list *head = NULL, *tmp = NULL;
-    int value;
+    int i, value;
 
-    while (value != NULL)
+    for (i = 1; i < argc; i++)
     {
+        value = atoi(argv[i]);
+        }
         if (head == NULL)
         {
             head = createNode(value);
@@ -44,9 +46,6 @@ int main() {
             tmp->next = createNode(value);
             tmp = tmp->next;
         }
-    }
-
-    print_list(head);
+     print_list(head);
     return (0);
-
-}
+    }
