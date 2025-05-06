@@ -30,10 +30,21 @@ int print_list(s_list *head) {
 }
 
 int main() {
-    s_list *head = NULL;
-    head = createNode(1);
-    head->next = createNode(2);
-    head->next->next = createNode(3);
+    s_list *head = NULL, *tmp = NULL;
+    int value;
+
+    while (value != NULL)
+    {
+        if (head == NULL)
+        {
+            head = createNode(value);
+            tmp = head;
+        }
+        else {
+            tmp->next = createNode(value);
+            tmp = tmp->next;
+        }
+    }
 
     print_list(head);
     return (0);
