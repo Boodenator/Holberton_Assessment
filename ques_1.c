@@ -41,11 +41,12 @@ int main(int argc, char *argv[]) {
         {
             head = createNode(value);
             tmp = head;
+            printf("%d \n", head->data);
         }
         else {
             tmp->next = createNode(value);
             tmp = tmp->next;
         }
-     print_list(head);
+    print_list(head);
     return (0);
     }
